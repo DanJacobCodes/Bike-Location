@@ -8,7 +8,7 @@ Bike.prototype.getBike = function(location, bikeLocation, bikeManufacturer){
       var bikes = response.bikes;
       bikes.forEach(function(bike) {
         result = bikeLocation(bike.stolen_location);
-        result2 = bikeManufacturer(bike.manufacturer_name);
+        result2 = bikeManufacturer(bike.manufacturer_name, bike.stolen_location);
 
       });
 
