@@ -3,7 +3,7 @@ var Bike = require('./../js/bike.js').bikeModule;
 var bikeLocation = function(location) {
 };
 var bikeManufacturer = function(bikeManufacturer, location) {
-  $('.showStolenMaker').append("Here are the manufacturer names: " + "<li>" + bikeManufacturer + " " + location + "</li>");
+  $('.showStolenMaker').append("<li>" + "Bike manufacturer names: " +  bikeManufacturer +  " " +  "<br>" + "" + location + "</li>");
 };
 
 $(document).ready(function() {
