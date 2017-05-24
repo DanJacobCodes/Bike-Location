@@ -2,8 +2,12 @@ var Bike = require('./../js/bike.js').bikeModule;
 
 var bikeLocation = function(location) {
 };
-var bikeManufacturer = function(bikeManufacturer, location) {
-  $('.showStolenMaker').append("<li>" + "Bike manufacturer names: " +  bikeManufacturer +  " " +  "<br>" + "" + location + "</li>");
+
+var bikeThumbnail = function(thumbnail) {
+};
+
+var bikeManufacturer = function(bikeManufacturer, location, thumbnail) {
+  $('.showStolenMaker').append("<li>" + "Manufacturer: " +  bikeManufacturer + "</li>" + "<li>" + location + "</li>" + "<br>"+ "<li>" + '</li><li> <img src="' + thumbnail + '" alt="No image available."</li><br><br>');
 };
 
 $(document).ready(function() {
@@ -11,6 +15,6 @@ $(document).ready(function() {
   $('#location-button').submit(function() {
     event.preventDefault();
     var location = $('#location').val();
-    currentBikeObject.getBike(location, bikeLocation, bikeManufacturer);
+    currentBikeObject.getBike(location, bikeLocation, bikeManufacturer, bikeThumbnail);
   });
 });
