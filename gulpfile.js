@@ -9,7 +9,9 @@ var del = require('del'),
     utilities = require('gulp-util'),
     lib = require('bower-files')(),
     plumber = require('gulp-plumber'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var buildProduction = utilities.env.production;
 
@@ -87,10 +89,19 @@ gulp.task('serve', ['build'], function() {
       index: "index.html"
     }
   });
-
+  gulp.watch(["scss/*.scss"], ['cssBuild']);
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
+});
+
+gulp.task('cssBuild', function() {
+  return gulp.src(['scss/*.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('htmlBuild', function() {

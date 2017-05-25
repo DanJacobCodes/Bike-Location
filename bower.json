@@ -1,9 +1,9 @@
 {
-  "name": "dino",
+  "name": "bikeApiApp",
   "description": "",
   "main": "gulpfile.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/JasonLazzuri/bikeAPIapp",
   "ignore": [
     "**/.*",
     "node_modules",

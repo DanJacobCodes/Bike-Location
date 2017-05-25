@@ -9,7 +9,7 @@ Bike.prototype.getBike = function(location, bikeLocation, bikeManufacturer, bike
         result = bikeLocation(bike.stolen_location);
         result1 = bikeThumbnail(bike.thumb);
         result2 = bikeManufacturer(bike.manufacturer_name, bike.stolen_location,bike.thumb);
-
+        console.log(response)
       });
 
       return result, result1, result2;
